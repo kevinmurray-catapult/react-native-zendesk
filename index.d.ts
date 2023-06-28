@@ -18,6 +18,9 @@ declare module 'react-native-zendesk-v2' {
   // function to set visitor info in chat
   export function setVisitorInfo(visitorInfo: UserInfo): void;
 
+  // function to set user identity
+  export function setUserIdentity(userIdentity: UserIdentity): void;
+
   // function to register notifications token with zendesk
   export function setNotificationToken(token: string): void;
   
@@ -37,7 +40,7 @@ declare module 'react-native-zendesk-v2' {
 
   interface InitOptions {
     // chat key of zendesk account to init chat
-    key: string,
+    key?: string,
     // appId of your zendesk account
     appId: string,
     // clientId of your zendesk account
@@ -46,17 +49,25 @@ declare module 'react-native-zendesk-v2' {
     url: string,
   }
 
-  interface UserInfo {
-     // user's name
+  interface User {
+    // user's name
     name: string
     // user's email
     email: string
+  }
+
+  interface UserInfo extends User {
     // user's phone
     phone?: number
     // department to redirect the chat
     department?: string
     // tags for chat
     tags?: Array<string>
+  }
+
+  interface UserIdentity extends User {
+    // JWT token
+    token?: string;
   }
 
 }
