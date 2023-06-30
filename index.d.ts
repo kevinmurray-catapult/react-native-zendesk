@@ -13,7 +13,7 @@ declare module 'react-native-zendesk-v2' {
   export function setPrimaryColor(color: string): void;
 
   // function to display help center UI
-  export function showHelpCenter(chatOptions: ChatOptions): void;
+  export function showHelpCenter(helpCenterOptions: HelpCenterOptions): void;
 
   // function to set visitor info in chat
   export function setVisitorInfo(visitorInfo: UserInfo): void;
@@ -31,7 +31,9 @@ declare module 'react-native-zendesk-v2' {
     chatOnly?: boolean
     // hex code color to set on chat
     color?: string
-    /* help center specific props only */
+  }
+
+  interface HelpCenterOptions {
     // sent in help center function only to show help center with/without chat
     withChat?: boolean
     // to enable/disable ticket creation in help center
