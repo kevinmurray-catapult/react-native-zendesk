@@ -21,5 +21,4 @@ Pod::Spec.new do |s|
   s.dependency 'ZendeskAnswerBotSDK'
   s.dependency 'ZendeskSupportSDK', '~> 6.0.0'
   s.dependency 'ZendeskChatSDK'
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
